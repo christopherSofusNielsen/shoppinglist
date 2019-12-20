@@ -1,4 +1,6 @@
 import React from 'react';
+import {Provider} from 'react-redux';
+import store from './store';
 import AppNavbar from './components/AppNavbar';
 import Shoppinglist from './components/Shoppinglist';
 
@@ -7,10 +9,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
+      <div className="App">
       <AppNavbar/>
       <Shoppinglist/>
-    </div>
+      </div>
+    </Provider>
   );
 }
 
